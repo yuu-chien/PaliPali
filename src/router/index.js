@@ -1,22 +1,50 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'layout',
+  //   component: () => import('../views/layout/Layout.vue'),
+  // },
   {
     path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    name: 'layout',
+    component: () => import('../views/layout/Layout.vue'),
+    children: [
+      {
+        path: '/palipali',
+        name: 'products',
+        component: () => import('../views/layout/Layout_index.vue'),
+      },
+      {
+        path: '/palipali/products',
+        name: 'products',
+        component: () => import('../views/layout/Layout_products.vue'),
+      },
+      {
+        path: '/palipali/product/:id',
+        name: 'Palipali-product',
+        component: () => import('../views/layout/Layout_prod.vue'),
+      },
+      {
+        path: '/palipali/about',
+        name: 'about',
+        component: () => import('../views/layout/Layout_about.vue'),
+      },
+      {
+        path: '/palipali/cart',
+        name: 'Palipali-cart',
+        component: () => import('../views/layout/Layout_cart.vue'),
+      },
+      {
+        path: '/palipali/success',
+        name: 'Palipali-success',
+        component: () => import('../views/layout/Layout_success.vue'),
+      },
+    ],
   },
 ];
 
