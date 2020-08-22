@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- 首頁主視覺 開始 -->
-    <header class="banner banner-lg banner--index">
-        <h2 class="fz-m font-primary color-tertiary">BE HOT GUY<br>IN HOT DAY</h2>
-        <p class="mt-1 font-secondary fz-xs color-basic-w">WaterSide life start from here</p>
+    <header class="banner banner-lg banner--index ta-center color-basic-w">
+        <h2 class="fz-m font-primary">BE HOT GUY<br>IN HOT DAY</h2>
+        <p class="mt-1 font-secondary fz-xs">WaterSide life start from here</p>
     </header>
     <!-- 首頁主視覺 結束 -->
 
@@ -18,7 +18,7 @@
                     <div class="w-60p customer-slider-pic">
                       <img src="~@/../static/images/customer_1.jpg" alt="">
                     </div>
-                    <div class="w-40p ml-1 color-basic-w font-secondary ta-justify">
+                    <div class="w-40p ml-xs color-basic-w font-secondary ta-justify">
                       <p class="mb-tiny">The best swimwear ever wore. It’s so fit that let my body shape looked prettier and muscular. I met my wife Aunt on Baker Beach when I wore the PaliPail swimwear. She came to talk to me because she thought the pattern so cute, and so did the wearer.</p>
                       <p class="color-secondary">Ming, TAIWAN</p>
                     </div>
@@ -27,9 +27,9 @@
                     <div class="w-60p customer-slider-pic">
                       <img src="~@/../static/images/customer_2.jpg" alt="">
                     </div>
-                    <div class="w-40p ml-1 color-basic-w font-secondary ta-justify">
-                      <p class="mb-tiny">The best swimwear ever wore. It’s so fit that let my body shape looked prettier and muscular. I met my wife Aunt on Baker Beach when I wore the PaliPail swimwear. She came to talk to me because she thought the pattern so cute, and so did the wearer.</p>
-                      <p class="color-secondary">Ming, TAIWAN</p>
+                    <div class="w-40p ml-xs color-basic-w font-secondary ta-justify">
+                      <p class="mb-tiny">Loving all the products of PaliPail! It has various styles that I can choose the best outfit to show how special am I. By the way, I bought a lots of clothes to my buddy, they loved so much.</p>
+                      <p class="color-secondary">Jay, TAIWAN</p>
                     </div>
                   </div>
               </div>
