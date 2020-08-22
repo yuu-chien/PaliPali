@@ -1,6 +1,6 @@
 <template>
   <div>
-    <loading :active.sync="isLoading" color="#2D7487" background-color="#000" opacity="0.7"></loading>
+    <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
     <section class="banner banner--prods">
       <h2 class="fz-m color-tertiary font-primary">SHOP NOW</h2>
     </section>

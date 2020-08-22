@@ -1,6 +1,6 @@
 <template>
   <div>
-    <loading :active.sync="isLoading" color="#2D7487" background-color="#000" opacity="0.7"></loading>
+    <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
     <section class="banner banner-sm banner--cart">
       <p class="fz-m font-primary">ORDER DETAIL</p>
     </section>

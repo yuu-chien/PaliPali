@@ -3,6 +3,8 @@ import $ from 'jquery';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import Loading from 'vue-loading-overlay';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import ValidationProvider from 'vee-validate';
 import App from './App.vue';
@@ -15,6 +17,7 @@ Vue.config.productionTip = false;
 window.$ = $;
 Vue.use(VueAxios, axios);
 Vue.component('Loading', Loading);
+Vue.component('Swiper', Swiper);
 Vue.component('ValidationProvider', ValidationProvider);
 
 Vue.filter('thousands', thousandsFilter);

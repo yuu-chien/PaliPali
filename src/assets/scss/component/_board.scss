@@ -1,6 +1,6 @@
 .board {
     width: 100%;
-    height: 720px;
+    height: 700px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -29,7 +29,7 @@
 
     &--md {
         width: 50%;
-        height: 360px;
+        height: 350px;
     }
 
     .board-title {
