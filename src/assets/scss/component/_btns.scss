@@ -1,0 +1,15 @@
+.btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+
+    &-dark {
+        color: $color-basic-w;
+        background-color: $color-basic-b;
+    }
+
+    &-pri {
+        color: $color-basic-w;
+        background-color: $color-primary;
+    }
+}

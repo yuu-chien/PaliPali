@@ -1,0 +1,45 @@
+.banner {
+    height: 60vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    &-sm {
+        height: 40vh;
+    }
+
+    &-lg {
+        height: 100vh; 
+    }
+
+    &--index {
+        background-image: url('~@/../static/images/banner_index.jpg');
+    }
+
+    &--about {
+        background-image: url('~@/../static/images/banner_about.jpg');
+    }
+
+    &--prods {
+        background-image: url('~@/../static/images/banner_product.jpg');
+    }
+
+    &--cart {
+        background-image: url('~@/../static/images/banner_cart.jpg');
+    }
+
+    &--success {
+        height: 92.5vh;
+        background-image: url('~@/../static/images/bg_success.jpg');
+    }
+
+    &--login {
+        background-image: url('~@/../static/images/bg_login.jpg');
+    }
+}
