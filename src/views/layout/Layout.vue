@@ -35,3 +35,21 @@
     </footer>
   </div>
 </template>
+
+<script>
+/* global $ */
+
+export default {
+  created() {
+    // eslint-disable-next-line func-names
+    $(window).scroll(function () {
+      const scrollHeight = $(this).scrollTop();
+      if (scrollHeight === 0) {
+        $('.navbar').removeClass('is-scroll');
+      } else {
+        $('.navbar').addClass('is-scroll');
+      }
+    });
+  },
+};
+</script>
