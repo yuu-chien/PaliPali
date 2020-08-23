@@ -20,7 +20,7 @@
                   </div>
                   <p class="w-75p color-secondary fz-xxs mb-1">{{ products.product.content }}</p>
                   <div class="d-flex ai-center">
-                    <input class="input" type="number" v-model="products.quantity" @click="editCart">
+                    <input class="input" type="number" v-model="products.quantity" @click="editCart(products)">
                     <p>{{ parseInt((products.quantity)*(products.product.price)) | thousands }}</p>
                   </div>
                 </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="mt-1 d-flex jc-flex-end">
               <p class="mr-xs fw-bold fz-xs color-primary">TOTAL</p>
-              <p class="mr-xs fz-xs">{{ totalPrice | thousands }}</p>
+              <p class="mr-xs fz-xs">{{ this.totalPrice | thousands }}</p>
             </div>
           </div>
           <div class="col-4">
@@ -64,7 +64,7 @@
                 <input type="text" id="recipient_address" name="address" class="form-control input input-line" placeholder="loremloremloremloremlorem" v-model="recipientData.address" :class="classes">
                 <span class="recipient-warn">{{ errors[0] }}</span>
               </ValidationProvider>
-              <div class="btn btn-dark mt-xs ta-center" @click="orderNow(recipientData)">ORDER NOW</div>
+              <div class="btn btn-dark mt-xs ta-center pointer" @click="orderNow(recipientData)">ORDER NOW</div>
             </form>
           </div>
         </div>
@@ -97,18 +97,26 @@ export default {
       this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`)
         .then((res) => {
           this.cartData = res.data.data;
-          this.cartData.forEach((item) => {
-            this.totalPrice += item.product.price;
+          // eslint-disable-next-line no-console
+          console.log('getCartData', this.cartData);
+          this.cartData.forEach((i) => {
+            this.totalPrice += i.product.price * i.quantity;
+            // eslint-disable-next-line no-console
+            console.log('this.totalPrice', this.totalPrice);
           });
           this.isLoading = false;
         });
     },
-    editCart() {
-      // eslint-disable-next-line no-console
-      // this.isLoading = true;
-      this.$http.patch(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`)
+    editCart(item) {
+      this.isLoading = true;
+      const cateData = {
+        product: item.product.id,
+        quantity: item.quantity,
+      };
+      this.$http.patch(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`, cateData)
         .then(() => {
           this.getCartData();
+          this.isLoading = false;
         });
     },
     delProd(id) {
@@ -117,6 +125,7 @@ export default {
         .then(() => {
           this.isLoading = false;
           this.getCartData();
+          this.isLoading = false;
         });
     },
     orderNow(recipientData) {
