@@ -6,6 +6,9 @@
     &-dark {
         color: $color-basic-w;
         background-color: $color-basic-b;
+        &:hover {
+            background-color: lighten($color: $color-basic-b, $amount: 5);
+        }
     }
 
     &-pri {
