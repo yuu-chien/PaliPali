@@ -8,24 +8,24 @@
       <div class="container">
         <div class="row">
           <menu class="col-3">
-            <ul class="mt-1">
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">New Arrive</a>
+            <ul class="mt-1 font-primary fz-sm">
+              <li class="cate-item mb-1">
+                <a href="#" class="links is-active" @click.prevent="cateChoose($event)">New Arrive</a>
               </li>
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">Swimwear</a>
+              <li class="cate-item mb-1">
+                <a href="#" class="links" @click.prevent="cateChoose($event)">Swimwear</a>
               </li>
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">T-shirt</a>
+              <li class="cate-item mb-1">
+                <a href="#" class="links" @click.prevent="cateChoose($event)">T-shirt</a>
               </li>
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">Shirt</a>
+              <li class="cate-item mb-1">
+                <a href="#" class="links" @click.prevent="cateChoose($event)">Shirt</a>
               </li>
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">Pants</a>
+              <li class="cate-item mb-1">
+                <a href="#" class="links" @click.prevent="cateChoose($event)">Pants</a>
               </li>
-              <li class="mb-1">
-                <a href="#" class="links links-pri font-primary fz-sm">Socks</a>
+              <li class="cate-item mb-1">
+                <a href="#" class="links" @click.prevent="cateChoose($event)">Socks</a>
               </li>
             </ul>
           </menu>
@@ -56,6 +56,7 @@
 </template>
 
 <script type="module">
+/* global $ */
 export default {
   data() {
     return {
@@ -68,11 +69,15 @@ export default {
     getAProducts(product) {
       this.$router.push(`product/${product.id}`);
     },
+    cateChoose(e) {
+      // eslint-disable-next-line newline-per-chained-call
+      $(e.target).addClass('is-active').parents('.cate-item').siblings().find('.links').removeClass('is-active');
+    },
   },
   created() {
+    // VUE_APP_APIPATH = https://course-ec-api.hexschool.io/api
     this.isLoading = true;
-    this.$http
-      .get(`https://course-ec-api.hexschool.io/api/${process.env.VUE_APP_UUID}/ec/products`)
+    this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/products`)
       .then((res) => {
         this.productsData = res.data.data;
         this.isLoading = false;
