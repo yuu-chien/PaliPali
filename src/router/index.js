@@ -15,13 +15,13 @@ const routes = [
     component: () => import('../views/layout/Layout.vue'),
     children: [
       {
-        path: '/palipali',
-        name: 'products',
+        path: '/palipali/index',
+        name: 'Palipali-index',
         component: () => import('../views/layout/Layout_index.vue'),
       },
       {
         path: '/palipali/products',
-        name: 'products',
+        name: 'Palipali-products',
         component: () => import('../views/layout/Layout_products.vue'),
       },
       {
@@ -31,7 +31,7 @@ const routes = [
       },
       {
         path: '/palipali/about',
-        name: 'about',
+        name: 'Palipali-about',
         component: () => import('../views/layout/Layout_about.vue'),
       },
       {
