@@ -7,94 +7,64 @@
     <section class="pt-lg pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-8 pr-5">
-            <div class="c-card c-card--cart" v-for="(products, id) in cartData" :key="id">
-              <div class="row c-card">
-                <div class="col-4 c-card__pic">
-                  <img :src="products.product.imageUrl" />
+          <div class="col-8 pl-sm pr-sm">
+            <div class="card cart-prod pt-tiny pb-tiny " v-for="(products, id) in cartData" :key="id">
+              <div class="row">
+                <div class="col-4 cart-prodImg">
+                  <img :src="products.product.imageUrl">
                 </div>
-                <div class="col-8 c-card__body c-card__body--v">
-                  <span class="material-icons" @click="delProd(products.product.id)">clear</span>
-                  <p class="c-input__label">{{ products.product.title }}</p>
-                  <p class="c-card__dec">{{ products.product.content }}</p>
-                  <div class="c-card__bottom">
-                    <input class="c-input c-input--w75p" type="number" v-model="products.quantity" />
+                <div class="col-8 card-content">
+                  <div class="d-flex jc-space-between ai-center mb-1">
+                    <p class="font-primary color-primary fz-sm">{{ products.product.title }}</p>
+                    <span class="material-icons color-secondary ta-right pointer" @click="delProd(products.product.id)">clear</span>
+                  </div>
+                  <p class="w-75p color-secondary fz-xxs mb-1">{{ products.product.content }}</p>
+                  <div class="d-flex ai-center">
+                    <input class="input" type="number" v-model="products.quantity" @click="editCart">
                     <p>{{ parseInt((products.quantity)*(products.product.price)) | thousands }}</p>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="mt-1 d-flex jc-flex-end">
+              <p class="mr-xs fw-bold fz-xs color-primary">TOTAL</p>
+              <p class="mr-xs fz-xs">{{ totalPrice | thousands }}</p>
+            </div>
           </div>
           <div class="col-4">
-            <form class="l-fromGroup">
-              <validation-provider rules="required" class="l-fromItem">
-                <label for="recipient_name" class="c-input__label">NAME</label>
-                <input
-                  type="text"
-                  id="recipient_name"
-                  name="name"
-                  class="form-control c-input"
-                  placeholder="Hex Excellent"
-                  v-model="recipientData.name"
-                />
-                <span class></span>
-              </validation-provider>
-              <validation-provider rules="numeric|required" class="l-fromItem">
-                <label for="recipient_tel" class="c-input__label">TELEPHONE</label>
-                <input
-                  type="tel"
-                  id="recipient_tel"
-                  name="tel"
-                  class="form-control c-input"
-                  placeholder="0912345678"
-                  v-model="recipientData.tel"
-                />
-                <span class></span>
-              </validation-provider>
-              <validation-provider rules="email|required" class="l-fromItem">
-                <label for="recipient_email" class="c-input__label">EMAIL</label>
-                <input
-                  type="email"
-                  id="recipient_email"
-                  name="email"
-                  class="form-control c-input"
-                  placeholder="Hex@Excellent.com"
-                  v-model="recipientData.email"
-                />
-                <span class></span>
-              </validation-provider>
-              <validation-provider rules="required" class="l-fromItem">
-                <label for="payment" class="c-input__label">PAYMENT</label>
-                <select
-                  name="payment"
-                  id="payment"
-                  class="form-control"
-                  v-model="recipientData.payment"
-                >
+            <form>
+              <ValidationProvider name="name" v-slot="{ errors, classes }" class="d-flex flex-d-col mb-tiny">
+                <label for="recipient_name" class="input input-label fz-xs">NAME</label>
+                <input type="text" id="recipient_name" name="name" class="input input-line" placeholder="Hex Excellent" v-model="recipientData.name" :class="classes">
+                <span class="recipient-warn">{{ errors[0] }}</span>
+              </ValidationProvider>
+              <ValidationProvider name="telephone" v-slot="{ errors, classes }" rules="numeric|required" class="d-flex flex-d-col mb-tiny">
+                <label for="recipient_tel" class="input input-label fz-xs">TELEPHONE</label>
+                <input type="tel" id="recipient_tel" name="tel" class="input input-line" placeholder="0912345678" v-model="recipientData.tel" :class="classes">
+                <span class="recipient-warn">{{ errors[0] }}</span>
+              </ValidationProvider>
+              <ValidationProvider name="email" v-slot="{ errors, classes }" rules="email|required" class="d-flex flex-d-col mb-tiny">
+                <label for="recipient_email" class="input input-label fz-xs">EMAIL</label>
+                <input type="email" id="recipient_email" name="email" class="input input-line" placeholder="Hex@Excellent.com" v-model="recipientData.email" :class="classes">
+                <span class="recipient-warn">{{ errors[0] }}</span>
+              </ValidationProvider>
+              <ValidationProvider name="payment" v-slot="{ errors, classes }" rules="required" class="d-flex flex-d-col mb-tiny">
+                <label for="payment" class="input input-label fz-xs">PAYMENT</label>
+                <select name="payment" id="payment" class="form-control input" v-model="recipientData.payment" :class="classes">
                   <option value="WebATM">網路銀行轉帳</option>
                   <option value="CVS">超商條碼繳費</option>
                   <option value="Credit">線上信用卡</option>
                   <option value="ApplePay">ApplePay</option>
                   <option value="GooglePay">GooglePay</option>
                 </select>
-              </validation-provider>
-              <validation-provider rules="required" class="l-fromItem">
-                <label for="recipient_address" class="c-input__label">ADDRESS</label>
-                <input
-                  type="text"
-                  id="recipient_address"
-                  name="address"
-                  class="form-control c-input"
-                  placeholder="loremloremloremloremlorem"
-                  v-model="recipientData.address"
-                />
-                <span class></span>
-              </validation-provider>
-              <div class="l-fromItem">
-                <p class="c-input__label">TOTAL</p>
-                <p class="c-input">{{ totalPrice }}</p>
-              </div>
-              <div class="c-btn c-btn__order" @click="orderNow(recipientData)">ORDER NOW</div>
+                <span class="recipient-warn">{{ errors[0] }}</span>
+              </ValidationProvider>
+              <ValidationProvider name="address" v-slot="{ errors, classes }" rules="required" class="d-flex flex-d-col mb-tiny">
+                <label for="recipient_address" class="input input-label fz-xs">ADDRESS</label>
+                <input type="text" id="recipient_address" name="address" class="form-control input input-line" placeholder="loremloremloremloremlorem" v-model="recipientData.address" :class="classes">
+                <span class="recipient-warn">{{ errors[0] }}</span>
+              </ValidationProvider>
+              <div class="btn btn-dark mt-xs ta-center" @click="orderNow(recipientData)">ORDER NOW</div>
             </form>
           </div>
         </div>
@@ -104,6 +74,7 @@
 </template>
 
 <script type="module">
+
 export default {
   data() {
     return {
@@ -123,17 +94,26 @@ export default {
   methods: {
     getCartData() {
       this.isLoading = true;
-      this.$http
-        .get(`https://course-ec-api.hexschool.io/api/${process.env.VUE_APP_UUID}/ec/shopping`)
+      this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`)
         .then((res) => {
           this.cartData = res.data.data;
+          this.cartData.forEach((item) => {
+            this.totalPrice += item.product.price;
+          });
           this.isLoading = false;
+        });
+    },
+    editCart() {
+      // eslint-disable-next-line no-console
+      // this.isLoading = true;
+      this.$http.patch(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`)
+        .then(() => {
+          this.getCartData();
         });
     },
     delProd(id) {
       this.isLoading = true;
-      this.$http
-        .delete(`https://course-ec-api.hexschool.io/api/${process.env.VUE_APP_UUID}/ec/shopping/${id}`)
+      this.$http.delete(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping/${id}`)
         .then(() => {
           this.isLoading = false;
           this.getCartData();
@@ -141,7 +121,7 @@ export default {
     },
     orderNow(recipientData) {
       this.isLoading = true;
-      this.$http.post(`https://course-ec-api.hexschool.io/api/${process.env.VUE_APP_UUID}/ec/orders`, recipientData)
+      this.$http.post(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/orders`, recipientData)
         .then(() => {
           this.cartData = '';
           this.isLoading = false;
