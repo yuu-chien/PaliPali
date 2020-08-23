@@ -17,5 +17,10 @@
 
 @import './pages/prod';
 @import './pages/cart';
+@import './pages/login';
 
 @import './utils/action';
+
+body::-webkit-scrollbar {
+    display: none;
+}
