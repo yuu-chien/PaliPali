@@ -11,12 +11,14 @@
           <router-link to="/palipali/products" class="links links-wh">Products</router-link>
         </li>
         <li class="mr-1 fw-bold">
-          <a href="#" class="links links-wh">Category</a>
-        </li>
-        <li class="mr-1 fw-bold">
           <router-link to="/palipali/about" class="links links-wh">About</router-link>
         </li>
-        <li>
+        <li class="mr-1">
+          <router-link to="/palipali/login" class="links links-wh">
+            <span class="material-icons">pool</span>
+          </router-link>
+        </li>
+        <li class="mr-1">
           <router-link to="/palipali/cart" class="links links-wh">
             <span class="material-icons">shopping_cart</span>
           </router-link>
