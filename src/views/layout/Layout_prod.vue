@@ -21,6 +21,10 @@
               <input class="input input-line" type="number" v-model="prodNum">
               <button class="btn btn-dark ml-1" @click="addCart(product, prodNum)">Add Cart</button>
             </div>
+            <div class="success-txt">
+              <p class="mr-1">Successfully added !</p>
+              <router-link to="/palipali/cart" class="links links-pri">Go Cart</router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -29,6 +33,7 @@
 </template>
 
 <script type="module">
+/* global $ */
 export default {
   data() {
     return {
@@ -44,13 +49,16 @@ export default {
   },
   methods: {
     addCart(prod, prodNum) {
+      this.isLoading = true;
       this.temporaryCart = prod;
       this.temporaryCart.product = prod.id;
       this.temporaryCart.quantity = prodNum;
       this.$http.post(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`, this.temporaryCart)
         .then(() => {
           // eslint-disable-next-line no-undef
-          this.$router.push({ path: '/palipali/cart' });
+          $('.success-txt').addClass('is-show');
+          // this.$router.push({ path: '/palipali/cart' });
+          this.isLoading = false;
         });
     },
   },

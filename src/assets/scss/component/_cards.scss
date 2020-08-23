@@ -32,26 +32,3 @@
 .about-propic {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
-
-.cart-prod {
-    border-bottom: 1px solid $color-tertiary;
-    .cart-prodImg {
-        height: 160px;
-        overflow: hidden;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
-}
-
-.prod-gallery {
-    height: 520px;
-    overflow: hidden;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
