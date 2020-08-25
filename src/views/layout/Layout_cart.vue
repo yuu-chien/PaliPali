@@ -97,12 +97,9 @@ export default {
       this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`)
         .then((res) => {
           this.cartData = res.data.data;
-          // eslint-disable-next-line no-console
-          console.log('getCartData', this.cartData);
+          this.totalPrice = 0;
           this.cartData.forEach((i) => {
             this.totalPrice += i.product.price * i.quantity;
-            // eslint-disable-next-line no-console
-            console.log('this.totalPrice', this.totalPrice);
           });
           this.isLoading = false;
         });
@@ -116,7 +113,6 @@ export default {
       this.$http.patch(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`, cateData)
         .then(() => {
           this.getCartData();
-          this.isLoading = false;
         });
     },
     delProd(id) {
