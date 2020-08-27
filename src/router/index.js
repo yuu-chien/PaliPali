@@ -35,6 +35,11 @@ const routes = [
         component: () => import('../views/layout/Layout_about.vue'),
       },
       {
+        path: '/palipali/gallery',
+        name: 'Palipali-gallery',
+        component: () => import('../views/layout/Layout_gallery.vue'),
+      },
+      {
         path: '/palipali/cart',
         name: 'Palipali-cart',
         component: () => import('../views/layout/Layout_cart.vue'),

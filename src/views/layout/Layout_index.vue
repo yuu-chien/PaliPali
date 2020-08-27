@@ -3,8 +3,7 @@
     <!-- 首頁主視覺 開始 -->
     <header class="banner banner-lg banner--index ta-center color-basic-w">
       <h2 class="fz-m font-primary" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600" data-aos-once: ture>
-        BE HOT GUY
-        <br />IN HOT DAY
+        BE HOT GUY<br>IN HOT DAY
       </h2>
       <p class="mt-1 font-secondary fz-xs" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600" data-aos-once: ture>WaterSide life start from here</p>
     </header>
@@ -19,23 +18,19 @@
             <!-- Slides -->
             <div class="swiper-slide d-flex">
               <div class="w-60p customer-slider-pic">
-                <img src="~@/../static/images/customer_1.jpg" alt />
+                <img src="https://images.unsplash.com/photo-1591705233241-340375dbff9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt />
               </div>
-              <div class="w-40p ml-xs color-basic-w font-secondary ta-justify">
-                <p
-                  class="mb-tiny"
-                >The best swimwear ever wore. It’s so fit that let my body shape looked prettier and muscular. I met my wife Aunt on Baker Beach when I wore the PaliPail swimwear. She came to talk to me because she thought the pattern so cute, and so did the wearer.</p>
+              <div class="w-40p ml-1 mr-1 color-basic-w font-secondary ta-justify">
+                <p class="mb-tiny">The best swimwear ever wore. It’s so fit that let my body shape looked prettier and muscular. I met my wife Aunt on Baker Beach when I wore the PaliPail swimwear. She came to talk to me because she thought the pattern so cute, and so did the wearer.</p>
                 <p class="color-secondary">Ming, TAIWAN</p>
               </div>
             </div>
             <div class="swiper-slide d-flex">
               <div class="w-60p customer-slider-pic">
-                <img src="~@/../static/images/customer_2.jpg" alt />
+                <img src="~@/../static/images/customer_2.jpg">
               </div>
-              <div class="w-40p ml-xs color-basic-w font-secondary ta-justify">
-                <p
-                  class="mb-tiny"
-                >Loving all the products of PaliPail! It has various styles that I can choose the best outfit to show how special am I. By the way, I bought a lots of clothes to my buddy, they loved so much.</p>
+              <div class="w-40p ml-1 mr-1 color-basic-w font-secondary ta-justify">
+                <p class="mb-tiny" >Loving all the products of PaliPail! It has various styles that I can choose the best outfit to show how special am I. By the way, I bought a lots of clothes to my buddy, they loved so much.</p>
                 <p class="color-secondary">Jay, TAIWAN</p>
               </div>
             </div>
@@ -75,21 +70,15 @@
       </div>
     </section>
     <!-- 商品類別 結束 -->
+    <!-- 商品類別 結束 -->
 
     <!-- 訂閱 Email 開始 -->
     <section class="pt-m pb-m bgc-secondary">
       <div class="container">
-        <div class="d-flex jc-center ai-center">
-          <label class="mr-1 ta-center fz-sm fw-bold" for="email">GET IN TOUCH !</label>
+        <div class="d-flex flex-d-col">
+          <label class="mb-1 fz-sm fw-bold" for="email">GET IN TOUCH !</label>
           <div class="d-flex jc-center ai-center">
-            <input
-              class="input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your email address"
-              style="width: 600px"
-            />
+            <input class="input sub-input" type="email" id="email" name="email" placeholder="Your email address">
             <button class="btn btn-dark">Subscribe</button>
           </div>
         </div>
@@ -108,9 +97,8 @@ export default {
     // eslint-disable-next-line no-unused-vars
     const swiper = new Swiper('.swiper-container', {
       autoplay: {
-        delay: 3000,
+        delay: 5000,
       },
-      speed: 500,
       loop: true,
     });
     AOS.init();

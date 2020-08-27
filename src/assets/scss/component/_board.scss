@@ -1,3 +1,4 @@
+// 首頁用 board 開始
 .board {
     width: 100%;
     height: 700px;
@@ -26,12 +27,10 @@
         object-fit: cover;
         transition: .5s;
     }
-
     &--md {
         width: 50%;
         height: 350px;
     }
-
     .board-title {
         position: absolute;
         top: 50%;
@@ -42,4 +41,81 @@
         color: $color-basic-w;
         z-index: 3;
     }
+}
+// 首頁用 board 結束
+
+
+/* ------------------------------*/ 
+
+// gallery 用開始
+.boards-wrap {
+    height: 50vh;
+}
+
+.board--lg {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            background-color: hsla(0, 0%, 0%, 0.3);
+            z-index: 2;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+}
+
+.board-md {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            background-color: hsla(0, 0%, 0%, 0.3);
+            z-index: 2;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+}
+
+.board-gallery-tit {
+    padding-right: 12px;
+    padding-bottom: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $color-basic-w;
+    z-index: 3;
 }
