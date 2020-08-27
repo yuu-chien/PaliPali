@@ -101,6 +101,7 @@
 
 <script>
 import Swiper from 'swiper/bundle';
+import AOS from 'aos';
 
 export default {
   mounted() {
@@ -112,6 +113,7 @@ export default {
       speed: 500,
       loop: true,
     });
+    AOS.init();
   },
 };
 </script>
