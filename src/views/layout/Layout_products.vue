@@ -10,22 +10,47 @@
           <menu class="col-3">
             <ul class="mt-1 font-primary fz-sm">
               <li class="cate-item mb-1">
-                <a href="#" class="links is-active" @click.prevent="cateChoose($event)">New Arrive</a>
+                <a href="#" class="links is-active" data-cate="new" @click.prevent="cateChoose($event)">New Arrive</a>
               </li>
               <li class="cate-item mb-1">
-                <a href="#" class="links" @click.prevent="cateChoose($event)">Swimwear</a>
+                <a
+                  href="#"
+                  class="links"
+                  data-cate="Swimwear"
+                  @click.prevent="cateChoose($event)"
+                >Swimwear</a>
               </li>
               <li class="cate-item mb-1">
-                <a href="#" class="links" @click.prevent="cateChoose($event)">T-shirt</a>
+                <a
+                  href="#"
+                  class="links"
+                  data-cate="T-shirt"
+                  @click.prevent="cateChoose($event)"
+                >T-shirt</a>
               </li>
               <li class="cate-item mb-1">
-                <a href="#" class="links" @click.prevent="cateChoose($event)">Shirt</a>
+                <a
+                  href="#"
+                  class="links"
+                  data-cate="Shirt"
+                  @click.prevent="cateChoose($event)"
+                >Shirt</a>
               </li>
               <li class="cate-item mb-1">
-                <a href="#" class="links" @click.prevent="cateChoose($event)">Pants</a>
+                <a
+                  href="#"
+                  class="links"
+                  data-cate="Pants"
+                  @click.prevent="cateChoose($event)"
+                >Pants</a>
               </li>
               <li class="cate-item mb-1">
-                <a href="#" class="links" @click.prevent="cateChoose($event)">Socks</a>
+                <a
+                  href="#"
+                  class="links"
+                  data-cate="Socks"
+                  @click.prevent="cateChoose($event)"
+                >Socks</a>
               </li>
             </ul>
           </menu>
@@ -62,26 +87,55 @@ export default {
     return {
       isLoading: false,
       fullPage: true,
-      productsData: [],
+      productsData: {},
+      filteredData: {},
     };
   },
   methods: {
+    getAllProducts() {
+      this.isLoading = true;
+      this.productsData = {};
+      this.filteredData = {};
+      this.$http
+        .get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/products`)
+        .then((res) => {
+          this.productsData = res.data.data;
+          this.isLoading = false;
+        });
+    },
     getAProducts(product) {
       this.$router.push(`product/${product.id}`);
     },
     cateChoose(e) {
       // eslint-disable-next-line newline-per-chained-call
       $(e.target).addClass('is-active').parents('.cate-item').siblings().find('.links').removeClass('is-active');
+      const cateName = $(e.target).data('cate');
+      this.filterCate(cateName);
+    },
+    // 透過 cateChoose(e) 傳入 HTML 標籤上 data-cate 的值後，將撈出來的全部資料進行比對。
+    filterCate(cateName) {
+      this.isLoading = true;
+      this.productsData = {};
+      this.filteredData = {};
+      this.$http
+        .get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/products`)
+        .then((res) => {
+          if (cateName !== 'new') {
+            for (let i = 0; i < res.data.data.length; i += 1) {
+              if (res.data.data[i].category === cateName) {
+                this.filteredData[i] = res.data.data[i];
+                this.productsData = this.filteredData;
+                this.isLoading = false;
+              }
+            }
+          } else {
+            this.getAllProducts();
+          }
+        });
     },
   },
   created() {
-    // VUE_APP_APIPATH = https://course-ec-api.hexschool.io/api
-    this.isLoading = true;
-    this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/products`)
-      .then((res) => {
-        this.productsData = res.data.data;
-        this.isLoading = false;
-      });
+    this.getAllProducts();
   },
 };
 </script>
