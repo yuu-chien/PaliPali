@@ -1,7 +1,7 @@
 <template>
   <div>
     <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
-    <section class="banner banner-sm banner--prod">
+    <section class="banner banner--prod">
       <h2 class="fz-m color-tertiary font-primary">SHOP NOW</h2>
     </section>
     <section class="pt-lg pb-lg">
@@ -27,6 +27,10 @@
             </div>
           </div>
         </div>
+        <section class="pt-lg">
+            <h4 class='mb-1 fz-xs font-primary'>You maight like...</h4>
+           <Recommend></Recommend>
+        </section>
       </div>
     </section>
   </div>
@@ -34,7 +38,12 @@
 
 <script type="module">
 /* global $ */
+import Recommend from '@/components/Recommend.vue';
+
 export default {
+  components: {
+    Recommend,
+  },
   data() {
     return {
       product: {},

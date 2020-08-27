@@ -1,7 +1,7 @@
 <template>
   <div>
-      <div class="col-9 d-flex flex-wrap-w p-0">
-        <div class="col-4 card pointer mb-1" v-for="(item, id) in recommendInfo" :key="id" @click.prevent="getAProducts(item)">
+      <div class="d-flex flex-wrap-w p-0">
+        <div class="card card-recom pointer mb-1" v-for="(item, id) in recommendInfo" :key="id" @click.prevent="getAProducts(item)">
           <div class="card-head prod-pic">
             <img :src="item.imageUrl">
           </div>
