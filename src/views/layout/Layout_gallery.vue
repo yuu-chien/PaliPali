@@ -1,5 +1,6 @@
 <template>
   <div>
+    <header class="banner banner--gallery banner-sm"></header>
     <Board></Board>
   </div>
 </template>
