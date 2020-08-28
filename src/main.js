@@ -4,6 +4,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import Loading from 'vue-loading-overlay';
 import Swiper from 'swiper';
+import VueSilentbox from 'vue-silentbox';
 import AOS from 'aos';
 import 'swiper/swiper-bundle.css';
 import 'aos/dist/aos.css';
@@ -18,6 +19,7 @@ Vue.config.productionTip = false;
 // 將 $ 註冊為全域符號
 window.$ = $;
 Vue.use(VueAxios, axios);
+Vue.use(VueSilentbox);
 Vue.use(AOS);
 Vue.component('Loading', Loading);
 Vue.component('Swiper', Swiper);
