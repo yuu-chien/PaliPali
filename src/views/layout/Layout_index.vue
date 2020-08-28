@@ -18,7 +18,7 @@
             <!-- Slides -->
             <div class="swiper-slide d-flex">
               <div class="w-60p customer-slider-pic">
-                <img src="https://images.unsplash.com/photo-1591705233241-340375dbff9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt />
+                <img src="~@/../static/images/customer_1.jpg">
               </div>
               <div class="w-40p ml-1 mr-1 color-basic-w font-secondary ta-justify">
                 <p class="mb-tiny">The best swimwear ever wore. It’s so fit that let my body shape looked prettier and muscular. I met my wife Aunt on Baker Beach when I wore the PaliPail swimwear. She came to talk to me because she thought the pattern so cute, and so did the wearer.</p>
