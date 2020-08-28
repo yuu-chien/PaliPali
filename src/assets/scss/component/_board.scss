@@ -52,63 +52,72 @@
     height: 50vh;
 }
 
-.board--lg {
+#silentbox-gallery {
     height: 100%;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    &:hover {
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            background-color: hsla(0, 0%, 0%, 0.3);
-            z-index: 2;
+    .silentbox-item {
+        width: 25%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                background-color: hsla(0, 0%, 0%, 0.3);
+                z-index: 2;
+            }
+            img {
+                transform: scale(1.2);
+            }
         }
         img {
-            transform: scale(1.2);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
         }
     }
-    img {
-        width: 100%;
+    .silentbox-item:first-child {
+        width: 50%;
         height: 100%;
-        object-fit: cover;
-        transition: .5s;
     }
 }
 
-.board-md {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    &:hover {
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            background-color: hsla(0, 0%, 0%, 0.3);
-            z-index: 2;
-        }
-        img {
-            transform: scale(1.2);
-        }
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .5s;
-    }
-}
+// #silentbox-overlay__description
+
+// .board-md {
+//     height: 100%;
+//     position: relative;
+//     overflow: hidden;
+//     cursor: pointer;
+//     &:hover {
+//         &::before {
+//             content: '';
+//             width: 100%;
+//             height: 100%;
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             display: block;
+//             background-color: hsla(0, 0%, 0%, 0.3);
+//             z-index: 2;
+//         }
+//         img {
+//             transform: scale(1.2);
+//         }
+//     }
+//     img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         transition: .5s;
+//     }
+// }
 
 .board-gallery-tit {
     padding-right: 12px;

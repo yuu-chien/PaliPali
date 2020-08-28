@@ -4,43 +4,15 @@
     <section class="pt-lg pb-lg">
       <div class="container">
         <p class="mb-1 fz-m color-primary font-primary">Fresh Ideas</p>
-        <div>
-            <div class="d-flex boards-wrap">
-                <div class="w-50p">
-                    <div class="board--lg">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1554235518-c4170f5deebd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                </div>
-                <div class="w-50 d-flex">
-                    <div class="board-md">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1526046762883-ca21b34d9077?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                    <div class="board-md">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1594623274957-742e85824239?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-d-row-r boards-wrap">
-                <div class="w-50p">
-                    <div class="board--lg">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1554235518-c4170f5deebd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                </div>
-                <div class="w-50 d-flex">
-                    <div class="board-md">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1526046762883-ca21b34d9077?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                    <div class="board-md">
-                        <p class="board-gallery-tit">NEW ARRIVE</p>
-                        <img src="https://images.unsplash.com/photo-1594623274957-742e85824239?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-                    </div>
-                </div>
-            </div>
+        <div class="boards-wrap">
+            <silent-box :gallery="images">
+              <template v-slot:silentbox-item="{ silentboxItem }">
+                  <a class="board-gallery-tit" @click.prevent="getAProducts(silentboxItem.product_id)">
+                    <span style="opacity: 0;">{{ silentboxItem.product_id }}</span>
+                    <p>{{ silentboxItem.product_title }}</p>
+                  </a>
+              </template>
+            </silent-box>
         </div>
       </div>
     </section>
@@ -52,7 +24,26 @@
 export default {
   data() {
     return {
+      images: [
+        {
+          src: '',
+          description: '🌊Lorem ipsum dolor sit amet.｜photo by Hex Excellent',
+          product_title: 'stirt',
+          product_id: '',
+        },
+        {
+          src: 'https://images.unsplash.com/photo-1566350795001-4d6b11d573bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80',
+          description: 'Lorem ipsum dolor sit amet.｜photo by Hex Excellent',
+          product_title: 'pants',
+          product_id: '',
+        },
+      ],
     };
+  },
+  methods: {
+    getAProducts(product) {
+      this.$router.push(`product/${product.id}`);
+    },
   },
 };
 </script>
