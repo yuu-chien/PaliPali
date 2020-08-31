@@ -1,5 +1,6 @@
 <template>
   <div class="container-fulid">
+    <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
     <section class="banner banner-lg banner--login">
       <div class="login-block">
         <h2 class="nav-logo nav-logo-pri mb-xs">PALIPALI</h2>
@@ -22,18 +23,23 @@ export default {
         email: '',
         password: '',
       },
+      isLoading: false,
+      fullPage: true,
     };
   },
   methods: {
     login() {
-      this.$http.post('https://course-ec-api.hexschool.io/api/auth/login', this.loginData)
+      this.isLoading = true;
+      this.$http.post(`${process.env.VUE_APP_APIPATH}/auth/login`, this.loginData)
         .then((res) => {
           const { token, expired } = res.data;
           document.cookie = `hexToken=${token};expires=${new Date(expired * 1000)}; path=/`;
-          this.$router.push('admin/products');
+          this.$router.push('/palipali/admin/products');
+          this.isLoading = false;
         })
-        .catch(() => {
-          // console.log(err);
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.log(err);
         });
     },
   },
