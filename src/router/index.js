@@ -4,11 +4,6 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'layout',
-  //   component: () => import('../views/layout/Layout.vue'),
-  // },
   {
     path: '/',
     name: 'layout',
@@ -55,6 +50,18 @@ const routes = [
     path: '/palipali/login',
     name: 'login',
     component: () => import('../views/Login.vue'),
+  },
+  {
+    path: '/palipali/admin',
+    name: 'admin',
+    component: () => import('../views/backend/Backend.vue'),
+    children: [
+      {
+        path: '/palipali/admin/products',
+        name: 'admin-products',
+        component: () => import('../views/backend/Backend_products.vue'),
+      },
+    ],
   },
 ];
 
