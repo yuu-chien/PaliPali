@@ -23,7 +23,7 @@
                         </li>
                     </ul>
                 </nav>
-                <section>
+                <section style="min-height: 60vh;">
                     <router-view />
                 </section>
             </div>

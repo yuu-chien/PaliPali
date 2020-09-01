@@ -7,7 +7,7 @@
                   <img :src="item.imageUrl">
               </div>
               <div class="card-content">
-                  <span class="material-icons mb-tiny fz-xs ta-right">clear</span>
+                  <span class="material-icons mb-tiny fz-xs ta-right" @click="deleteProduct(item)">clear</span>
                   <div class="d-flex jc-space-between mb-tiny">
                       <div class="card-tit">{{ item.title }}</div>
                   </div>
@@ -47,6 +47,14 @@ export default {
     },
     editProduct(product) {
       this.$router.push(`/palipali/admin/product/${product.id}`);
+    },
+    deleteProduct(p) {
+      this.isLoading = true;
+      this.$http.delete(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/admin/ec/products`)
+        .then((res) => {
+          this.productsData = res.data.data;
+          this.isLoading = false;
+        });
     },
   },
   created() {

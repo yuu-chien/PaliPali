@@ -28,7 +28,7 @@
         </li>
       </ul>
     </nav>
-    <main>
+    <main style="min-height: 100vh;">
       <router-view />
     </main>
     <footer class="pt-1 pb-1 bgc-basic-w">
