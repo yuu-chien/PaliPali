@@ -4,11 +4,11 @@
     outline-width: 0;
     outline: none;
     border: none;
-    color: $color-secondary;
+    color: $color-primary;
     text-align: center;
 
     &-line {
-        border-bottom: 1px solid $color-primary;
+        border-bottom: 1px solid transparent;
         outline-width: 0;
         outline: none;
         background-color: transparent;
@@ -17,6 +17,9 @@
             font-size: 14px;
             color: #ccc;
             text-align: left;
+        }
+        &:focus {
+            border-bottom: 1px solid $color-secondary;
         }
     }
     &-label {
