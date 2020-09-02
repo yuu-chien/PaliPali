@@ -4,7 +4,8 @@
       <div class="mb-m">
         <p class="d-flex ai-center">Click the<span class="material-icons fz-xs mr-tiny ml-tiny color-primary">info</span>to edit.</p>
         <p class="d-flex ai-center">Click the<span class="material-icons fz-xs mr-tiny ml-tiny color-primary">clear</span>to delete.</p>
-        <p>Or click <a href="#" class="font-primary color-primary">HERE</a> to add a new product.</p>
+        <p>
+          Or click <span class="font-primary color-primary" @click="addProduct">HERE</span> to add a new product.</p>
       </div>
       <div class="row d-flex flex-wrap-w">
           <div class="col-4 card backend-card d-flex mb-1" v-for="item in productsData" :key="item.id">
@@ -48,6 +49,9 @@ export default {
           this.productsData = res.data.data;
           this.isLoading = false;
         });
+    },
+    addProduct() {
+      this.$router.push('/palipali/admin/product-add');
     },
     editProduct(product) {
       this.$router.push(`/palipali/admin/product/${product.id}`);
