@@ -51,7 +51,7 @@
                 <router-link to="/palipali/admin/products">
                     <button class="btn btn-pri mr-1">Cancel</button>
                 </router-link>
-                <button class="btn btn-dark" @click.prevent="saveEdits(prodData)">Finish</button>
+                <button class="btn btn-dark" @click.prevent="saveEdits(prodData)">Save</button>
             </div>
         </form>
         <div class="backend-preview-pic w-40p">
