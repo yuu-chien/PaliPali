@@ -9,17 +9,17 @@
             <div class="container">
                 <nav class="backend-nav">
                     <ul class="d-flex">
-                        <li class="mr-1 fw-bold">
-                            <router-link to="/palipali/admin/products" class="links fz-xs is-active">Products</router-link>
+                        <li class="backend-nav-item is-active mr-1 fw-bold" @click.prevent="cateChoose($event)">
+                            <router-link to="/palipali/admin/products" class="links">Products</router-link>
                         </li>
-                        <li class="mr-1 fw-bold">
-                            <router-link to="" class="links fz-xs">Orders</router-link>
+                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
+                            <router-link to="/palipali/admin/orders" class="links">Orders</router-link>
                         </li>
-                        <li class="mr-1 fw-bold">
-                            <router-link to="" class="links fz-xs">Products</router-link>
+                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
+                            <router-link to="" class="links">Products</router-link>
                         </li>
-                        <li class="mr-1 fw-bold">
-                            <router-link to="" class="links fz-xs">Products</router-link>
+                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
+                            <router-link to="" class="links">Products</router-link>
                         </li>
                     </ul>
                 </nav>
@@ -37,3 +37,15 @@
         </footer>
     </div>
 </template>
+
+<script type="module">
+/* global $ */
+export default {
+  methods: {
+    cateChoose(e) {
+      // eslint-disable-next-line newline-per-chained-call
+      $(e.target).parents('.backend-nav-item').addClass('is-active').siblings().removeClass('is-active');
+    },
+  },
+};
+</script>
