@@ -1,7 +1,9 @@
 .backend-nav {
     margin-bottom: 24px;
-    .links {
+    .backend-nav-item {
+        font-size: 20px;
         &.is-active {
+            color: $color-secondary;
             &::after {
                 content: '';
                 width: 100%;
@@ -9,6 +11,9 @@
                 display: block;
                 margin-top: 4px;
                 background: $color-secondary;
+            }
+            .links {
+                color: $color-secondary;
             }
         }
     }
@@ -40,4 +45,15 @@
         height: 100%;
         object-fit: cover;
     }
+}
+
+.orders-list {
+    margin: auto;
+    li > div {
+        flex: 1;
+    }
+}
+
+.orders-list-item {
+    border-bottom: 1px solid #ccc;
 }
