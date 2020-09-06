@@ -1,11 +1,20 @@
 <template>
     <div>
       <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
+      <nav class="backend-nav">
+          <ul class="d-flex">
+              <li class="backend-nav-item mr-1 fw-bold is-active">
+                  <router-link to="/palipali/admin/products" class="links">Products</router-link>
+              </li>
+              <li class="backend-nav-item mr-1 fw-bold">
+                  <router-link to="/palipali/admin/orders" class="links">Orders</router-link>
+              </li>
+          </ul>
+      </nav>
       <div class="mb-m">
         <p class="d-flex ai-center">Click the<span class="material-icons fz-xs mr-tiny ml-tiny color-primary">info</span>to edit.</p>
         <p class="d-flex ai-center">Click the<span class="material-icons fz-xs mr-tiny ml-tiny color-primary">clear</span>to delete.</p>
-        <p>
-          Or click <span class="font-primary color-primary" @click="addProduct">HERE</span> to add a new product.</p>
+        <p>Or click <span class="font-primary color-primary" @click="addProduct">HERE</span> to add a new product.</p>
       </div>
       <div class="row d-flex flex-wrap-w">
           <div class="col-4 card backend-card d-flex mb-1" v-for="item in productsData" :key="item.id">

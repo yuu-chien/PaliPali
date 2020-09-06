@@ -49,11 +49,15 @@
 
 .orders-list {
     margin: auto;
-    li > div {
-        flex: 1;
-    }
 }
 
 .orders-list-item {
-    border-bottom: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid $color-tertiary;
+    margin-bottom: 16px;
+    
+    &:hover {
+        background: #eee;
+    }
 }

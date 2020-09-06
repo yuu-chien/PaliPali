@@ -1,28 +1,12 @@
 <template>
     <div class="container-fluid p-0">
         <header class="banner banner-sm banner--admin">
-            <div class="">
-                <h1 class="fz-m font-logo color-primary">PALIPALI</h1>
-            </div>
+            <router-link to="/palipali/index" class="links fz-m font-logo color-primary">
+                <h1>PALIPALI</h1>
+            </router-link>
         </header>
         <main class="pt-lg pb-lg">
             <div class="container">
-                <nav class="backend-nav">
-                    <ul class="d-flex">
-                        <li class="backend-nav-item is-active mr-1 fw-bold" @click.prevent="cateChoose($event)">
-                            <router-link to="/palipali/admin/products" class="links">Products</router-link>
-                        </li>
-                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
-                            <router-link to="/palipali/admin/orders" class="links">Orders</router-link>
-                        </li>
-                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
-                            <router-link to="" class="links">Products</router-link>
-                        </li>
-                        <li class="backend-nav-item mr-1 fw-bold" @click.prevent="cateChoose($event)">
-                            <router-link to="" class="links">Products</router-link>
-                        </li>
-                    </ul>
-                </nav>
                 <section style="min-height: 60vh;">
                     <router-view />
                 </section>
