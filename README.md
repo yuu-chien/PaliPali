@@ -1,5 +1,5 @@
 # palipali
-The E-commerce website of men's clothing.
+The E-commerce website of men's clothing which want to build cozy, chill and happy waterside life.
 
 
 ## Info
