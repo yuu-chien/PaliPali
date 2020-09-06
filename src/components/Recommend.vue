@@ -38,7 +38,7 @@ export default {
         this.recommendInfo[s] = this.recommendProducts[s];
       }
       // eslint-disable-next-line no-console
-      console.log('s', this.recommendInfo);
+      // console.log('s', this.recommendInfo);
     },
   },
   created() {

@@ -72,6 +72,7 @@ export default {
     },
   },
   created() {
+    $(window).scrollTop(0);
     this.isLoading = true;
     // 取得產品 id
     const { id } = this.$route.params;

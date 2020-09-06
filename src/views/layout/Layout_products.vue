@@ -105,6 +105,7 @@ export default {
     },
   },
   created() {
+    $(window).scrollTop(0);
     this.getAllProducts();
   },
 };

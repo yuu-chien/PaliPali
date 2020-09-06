@@ -7,10 +7,13 @@
 
 <script type="module">
 import Board from '@/components/Board.vue';
-
+/* global $ */
 export default {
   components: {
     Board,
+  },
+  created() {
+    $(window).scrollTop(0);
   },
 };
 </script>

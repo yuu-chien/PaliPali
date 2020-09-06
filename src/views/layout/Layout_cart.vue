@@ -64,10 +64,10 @@
                 <input type="text" id="recipient_address" name="address" class="form-control input input-line" placeholder="loremloremloremloremlorem" v-model="recipientData.address" :class="classes">
                 <span class="recipient-warn">{{ errors[0] }}</span>
               </ValidationProvider>
-              <router-link to="/palipali/success" class="links links-pri mt-tiny">
+              <!-- <router-link to="/palipali/success" class="links links-pri mt-tiny">
                 <div class="btn btn-dark mt-xs ta-center pointer">ORDER NOW</div>
-              </router-link>
-              <!-- <div class="btn btn-dark mt-xs ta-center pointer" @click="orderNow(recipientData)">ORDER NOW</div> -->
+              </router-link> -->
+              <div class="btn btn-dark mt-xs ta-center pointer" @click="orderNow(recipientData)">ORDER NOW</div>
             </form>
           </div>
         </div>
