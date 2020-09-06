@@ -76,6 +76,11 @@ const routes = [
         name: 'admin-orders',
         component: () => import('../views/backend/Backend_orders.vue'),
       },
+      {
+        path: '/palipali/admin/order/:id',
+        name: 'admin-order-check',
+        component: () => import('../views/backend/Backend_ord.vue'),
+      },
     ],
   },
 ];
