@@ -17,23 +17,23 @@ This Project is for practice, not for commercial use or distribution.
 * 套件：AOS、Swiper、vee-validate、vue-axios、vue-loading-overlay、vue-silentbox
 
 ### Framework
-Frontend
-　　|___ Index
-　　|___ Products list
-　　|　　 |___ Product info
-　　|___ Chart
-　　|___ Checkout successfully
-　　|___ About
-　　|___ Gallery
+Frontend  
+　　|___ Index  
+　　|___ Products list  
+　　|　　 |___ Product info  
+　　|___ Chart  
+　　|___ Checkout successfully  
+　　|___ About  
+　　|___ Gallery  
 
-Backend
-　　|___ Admin login
-　　|___ Products list
-　　|　　 |___ Product edit
-　　|　　 |___ Product add
-　　|　　 |___ Product delete
-　　|___ Orders list
-　　 　　 |___ Order info
+Backend  
+　　|___ Admin login  
+　　|___ Products list  
+　　|　　 |___ Product edit  
+　　|　　 |___ Product add  
+　　|　　 |___ Product delete  
+　　|___ Orders list  
+　　 　　 |___ Order info  
 
 
 <br>
