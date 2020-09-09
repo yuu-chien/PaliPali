@@ -2,7 +2,7 @@
   <div>
     <loading :active.sync="isLoading" color="#2D7487" background-color="#000"></loading>
     <section class="banner banner-sm banner--cart">
-      <p class="fz-m font-primary">ORDER DETAIL</p>
+      <h2 class="fz-m font-primary">ORDER DETAIL</h2>
     </section>
     <section class="pt-lg pb-lg">
       <div class="container">

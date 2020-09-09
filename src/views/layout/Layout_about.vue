@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="banner banner--about">
-      <p class="fz-m color-primary font-primary">ABOUT US</p>
+      <h2 class="fz-m color-primary font-primary">ABOUT US</h2>
     </header>
     <section class="pt-lg pb-lg">
       <div class="container">
