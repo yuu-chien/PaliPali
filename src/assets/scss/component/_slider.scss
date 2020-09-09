@@ -12,3 +12,17 @@
         object-fit: cover;
     }
 }
+
+.customer-content {
+    width: 40%;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-family: $font-secondary;
+    color: $color-basic-w;
+    p {
+        font-size: 16px;
+        @include screen-sm {
+            font-size: 14px;
+        };
+    }
+}

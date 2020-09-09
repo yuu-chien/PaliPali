@@ -9,6 +9,9 @@
     left: 0;
     background-color: transparent;
     z-index: 66;
+    @include screen-sm {
+        flex-direction: column;
+    }
 }
 
 .nav-logo {
@@ -18,5 +21,30 @@
 
     &-pri {
         color: $color-primary;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    color: $color-basic-w;
+    @include screen-sm {
+        display: none;
+        font-size: 14px;
+    }
+    &.more {
+        display: flex;
+    }
+}
+
+.nav-more {
+    display: none;
+    margin-top: 8px;
+    color: $color-basic-w;
+    .material-icons {
+        font-size: 20px;
+    }
+    @include screen-sm {
+        display: block;
     }
 }

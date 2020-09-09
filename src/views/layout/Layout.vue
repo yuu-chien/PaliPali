@@ -6,7 +6,10 @@
           <h1>PALIPALI</h1>
         </router-link>
       </div>
-      <ul class="d-flex ai-center color-basic-w">
+      <div class="nav-more" @click="navMore">
+        <span class="material-icons">expand_more</span>
+      </div>
+      <ul class="nav-list">
         <li class="mr-1 fw-bold">
           <router-link to="/palipali/products" class="links links-wh">Products</router-link>
         </li>
@@ -31,11 +34,11 @@
     <main style="min-height: 100vh;">
       <router-view />
     </main>
-    <footer class="pt-1 pb-1 bgc-basic-w">
+    <footer class="footer bgc-basic-w">
       <div class="container d-flex jc-center ai-center">
-        <h2 class="mr-3 font-logo">PALIPALI</h2>
-        <p class="fz-ets mr-2">Copyright &copy; 2020</p>
-        <p class="fz-ets">This Project is for practice, not for commercial use or distribution.</p>
+        <h2 class="footer-logo mr-3 font-logo">PALIPALI</h2>
+        <p class="footer-copy fz-ets mr-2">Copyright &copy; 2020</p>
+        <p class="footer-sign fz-ets">This Project is for practice, not for commercial use or distribution.</p>
       </div>
     </footer>
   </div>
@@ -45,6 +48,11 @@
 /* global $ */
 
 export default {
+  methods: {
+    navMore() {
+      $('.nav-list').toggleClass('more');
+    },
+  },
   created() {
     // eslint-disable-next-line func-names
     $(window).scroll(function () {
