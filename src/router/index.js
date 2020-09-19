@@ -5,12 +5,17 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    // 當使用者輸入不存在頁面時，可以導向首頁
+    path: '*',
+    redirect: '/palipali/index',
+  },
+  {
+    path: '',
     name: 'layout',
     component: () => import('../views/layout/Layout.vue'),
     children: [
       {
-        path: '/palipali/index',
+        path: '/',
         name: 'Palipali-index',
         component: () => import('../views/layout/Layout_index.vue'),
       },
