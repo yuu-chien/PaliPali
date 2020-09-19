@@ -2,11 +2,11 @@
   <div class="container-fluid p-0">
     <nav class="navbar">
       <div class="nav-logo">
-        <router-link to="/palipali/index" class="links links-wh">
+        <router-link to="/" class="links links-wh">
           <h1>PALIPALI</h1>
         </router-link>
       </div>
-      <div class="nav-more" @click="navMore">
+      <div class="nav-more">
         <span class="material-icons">expand_more</span>
       </div>
       <ul class="nav-list">
@@ -45,24 +45,25 @@
 </template>
 
 <script>
-/* global $ */
+// /* global $ */
 
-export default {
-  methods: {
-    navMore() {
-      $('.nav-list').toggleClass('more');
-    },
-  },
-  created() {
-    // eslint-disable-next-line func-names
-    $(window).scroll(function () {
-      const scrollHeight = $(this).scrollTop();
-      if (scrollHeight === 0) {
-        $('.navbar').removeClass('is-scroll');
-      } else {
-        $('.navbar').addClass('is-scroll');
-      }
-    });
-  },
-};
+// export default {
+//   methods: {
+//     navMore() {
+//       $('.nav-list').toggleClass('more');
+//     },
+//   },
+//   created() {
+//     $(window).scroll(() => {
+//       const scrollHeight = $(this).scrollTop();
+//       // eslint-disable-next-line no-console
+//       console.log('scrollHeight', scrollHeight);
+//       if (scrollHeight === 0) {
+//         $('.navbar').removeClass('is-scroll');
+//       } else {
+//         $('.navbar').addClass('is-scroll');
+//       }
+//     });
+//   },
+// };
 </script>

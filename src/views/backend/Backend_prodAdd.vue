@@ -85,12 +85,8 @@ export default {
   methods: {
     addProduct(info) {
       this.isLoading = true;
-      // eslint-disable-next-line no-console
-      console.log('info', info);
       this.$http.post(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/admin/ec/product`, info)
         .then(() => {
-          // eslint-disable-next-line no-console
-          console.log('success!');
           this.isLoading = false;
           this.$router.push('/palipali/admin/products');
         });

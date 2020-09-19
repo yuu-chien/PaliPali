@@ -36,10 +36,6 @@ export default {
           document.cookie = `hexToken=${token};expires=${new Date(expired * 1000)}; path=/`;
           this.$router.push('/palipali/admin/products');
           this.isLoading = false;
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.log(err);
         });
     },
   },

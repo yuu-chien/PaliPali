@@ -77,8 +77,9 @@ export default {
       this.$router.push(`product/${product.id}`);
     },
     cateChoose(e) {
-      // eslint-disable-next-line newline-per-chained-call
-      $(e.target).addClass('is-active').parents('.cate-item').siblings().find('.links').removeClass('is-active');
+      $(e.target).addClass('is-active').parents('.cate-item').siblings()
+        .find('.links')
+        .removeClass('is-active');
       const cateName = $(e.target).data('cate');
       this.filterCate(cateName);
     },
