@@ -27,8 +27,9 @@
 export default {
   methods: {
     cateChoose(e) {
-      // eslint-disable-next-line newline-per-chained-call
-      $(e.target).parents('.backend-nav-item').addClass('is-active').siblings().removeClass('is-active');
+      $(e.target).parents('.backend-nav-item').addClass('is-active')
+        .siblings()
+        .removeClass('is-active');
     },
   },
 };

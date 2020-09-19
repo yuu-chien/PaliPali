@@ -69,8 +69,6 @@ export default {
       this.isLoading = true;
       this.$http.delete(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/admin/ec/product/${item.id}`)
         .then(() => {
-          // eslint-disable-next-line no-console
-          console.log('delete success');
           this.getAllProducts();
         });
     },

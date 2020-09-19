@@ -83,8 +83,6 @@ export default {
         .then((res) => {
           this.orderData = res.data.data;
           this.tempData = this.orderData;
-          // eslint-disable-next-line no-console
-          console.log('this.orderData', this.orderData);
           this.isLoading = false;
         });
     },

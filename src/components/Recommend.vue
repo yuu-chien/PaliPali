@@ -32,13 +32,10 @@ export default {
       for (let i = finNum; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
         [this.recommendProducts[i], this.recommendProducts[j]] = [this.recommendProducts[j], this.recommendProducts[i]];
-        // eslint-disable-next-line no-plusplus
       }
       for (let s = 0; s < 5; s += 1) {
         this.recommendInfo[s] = this.recommendProducts[s];
       }
-      // eslint-disable-next-line no-console
-      // console.log('s', this.recommendInfo);
     },
   },
   created() {

@@ -87,8 +87,6 @@ export default {
     saveEdits(info) {
       this.isLoading = true;
       this.tempData = info;
-      // eslint-disable-next-line no-console
-      console.log('this.tempData1', this.tempData);
       this.$http.patch(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempData.id}`, this.tempData)
         .then(() => {
           this.isLoading = false;

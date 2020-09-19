@@ -64,9 +64,7 @@ export default {
       this.temporaryCart.quantity = prodNum;
       this.$http.post(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`, this.temporaryCart)
         .then(() => {
-          // eslint-disable-next-line no-undef
           $('.success-txt').addClass('is-show');
-          // this.$router.push({ path: '/palipali/cart' });
           this.isLoading = false;
         });
     },
