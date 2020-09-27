@@ -70,8 +70,6 @@ export default {
     },
   },
   created() {
-    $(window).scrollTop(0);
-    this.isLoading = true;
     // 取得產品 id
     const { id } = this.$route.params;
     this.$http.get(`${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/product/${id}`)

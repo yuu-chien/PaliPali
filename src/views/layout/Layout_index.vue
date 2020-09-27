@@ -93,11 +93,8 @@
 <script>
 import Swiper from 'swiper/bundle';
 import AOS from 'aos';
-/* global $ */
+
 export default {
-  created() {
-    $(window).scrollTop(0);
-  },
   mounted() {
     // eslint-disable-next-line no-unused-vars
     const swiper = new Swiper('.swiper-container', {

@@ -89,9 +89,15 @@ const routes = [
     ],
   },
 ];
-
+// 換頁時可將頁面保持從頂開始瀏覽
 const router = new VueRouter({
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

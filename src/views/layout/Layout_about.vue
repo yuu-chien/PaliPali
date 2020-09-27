@@ -20,12 +20,3 @@
     </section>
   </div>
 </template>
-
-<script type="module">
-/* global $ */
-export default {
-  created() {
-    $(window).scrollTop(0);
-  },
-};
-</script>
