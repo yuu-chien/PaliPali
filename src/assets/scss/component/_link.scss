@@ -1,21 +1,21 @@
 .links {
+  text-decoration: none;
+  &:hover {
     text-decoration: none;
+    color: $color-secondary;
+  }
+
+  &-pri {
+    color: $color-primary;
     &:hover {
-        text-decoration: none;
-        color: $color-secondary;
+      color: $color-secondary;
     }
+  }
 
-    &-pri {
-        color: $color-primary;
-        &:hover {
-            color: $color-secondary;
-        }
+  &-wh {
+    color: $color-basic-w;
+    &:hover {
+      color: $color-basic-b;
     }
-
-    &-wh {
-        color: $color-basic-w;
-        &:hover {
-            color: $color-basic-b;
-        }
-    }
+  }
 }

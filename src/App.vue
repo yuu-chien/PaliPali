@@ -7,6 +7,6 @@
 <style lang="scss">
 
 @import './assets/all';
-@import './assets/scss/main';
+// @import './assets/scss/main';
 
 </style>
