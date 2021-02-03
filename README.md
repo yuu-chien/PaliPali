@@ -3,7 +3,7 @@ The E-commerce website of men's clothing which want to build cozy, chill and hap
 
 
 ## Info
-此為 六角學院 JS 作品實戰班 最終作業，僅為練習，無任何商業用途。  
+此為 2020 夏季．六角學院 JS 作品實戰班 最終作業，僅為練習，無任何商業用途。  
 This Project is for practice, not for commercial use or distribution.  
 
 ### Skills
